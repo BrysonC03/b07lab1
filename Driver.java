@@ -1,3 +1,55 @@
+class Polynomial{
+    private double[] coefficient;
+
+    public Polynomial() {
+        coefficient = new double[1];
+        coefficient[0] = 0;
+    }
+
+    public Polynomial(double[] input)
+    {
+        coefficient = new double[input.length];
+        for (int i = 0; i<input.length; i++)
+        {
+            coefficient[i] = input[i];
+        }
+    }
+
+    public Polynomial add(Polynomial input)
+    {
+        int totalLength = coefficient.length + input.coefficient.length;
+        double[] newCoefficient = new double[totalLength];
+        for (int i = 0; i<totalLength; i++)
+        {
+            double thisNumber = (i < this.coefficient.length) ? this.coefficient[i] : 0;
+            double inputNumber = (i < input.coefficient.length) ? input.coefficient[i] : 0;
+            newCoefficient[i] = thisNumber + inputNumber;
+        }
+        return new Polynomial(newCoefficient);
+    }
+
+    public double evaluate(double input)
+    {
+        double calculate = 0;
+        for (int i=0; i<this.coefficient.length; i++)
+        {
+            calculate += this.coefficient[i] * Math.pow(input, i);
+        }
+        return calculate;
+    }
+
+    public boolean hasRoot(double input)
+    {
+        double result = evaluate(input);
+        if (result == 0)
+        {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
 public class Driver {
     public static void main(String [] args) {
         Polynomial p = new Polynomial();
