@@ -81,26 +81,6 @@ public class Polynomial{
         }
 
         return new Polynomial(finalCoeff, finalExp);
-
-
-
-
-
-        // int totalLength = this.coefficient.length + input.coefficient.length;
-        // double[] newCoefficient = new double[totalLength];
-        // int[] newExponent = new int[totalLength];
-        // double thisNumber;
-        // double inputNumber;
-        // for (int i = 0; i<totalLength; i++)
-        // {
-        //     thisNumber = (i < this.coefficient.length) ? this.coefficient[i] : 0;
-        //     inputNumber = (i < input.coefficient.length) ? input.coefficient[i] : 0;
-        //     newCoefficient[i] = thisNumber + inputNumber;
-        //     thisNumber = (i < this.exponents.length) ? this.exponents[i] : 0;
-        //     inputNumber = (i < input.exponents.length) ? input.exponents[i] : 0;
-        //     newExponent[i] = thisNumber + inputNumber;
-        // }
-        // return new Polynomial(newCoefficient, newExponent);
     }
 
     public double evaluate(double input)
@@ -172,10 +152,10 @@ public class Polynomial{
 
         double[] finalCoeff = new double[mergedPoly.size()];
         int[] finalExp = new int[mergedPoly.size()];
-        for(int i=0; i<mergedPoly.size(); i++)
+        for(int n=0; n<mergedPoly.size(); n++)
         {
-            finalCoeff[i] = mergedPoly.get(i).coef;
-            finalExp[i] = mergedPoly.get(i).exp;
+            finalCoeff[n] = mergedPoly.get(n).coef;
+            finalExp[n] = mergedPoly.get(n).exp;
         }
 
 
